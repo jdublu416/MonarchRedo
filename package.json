@@ -1,0 +1,16 @@
+{
+  "name": "MonarchReact",
+  "version": "1.0.0",
+  "description": "this is a revamp of an old application written with handlebars transformed to a new app created with React",
+  "main": "index.js",
+  "repository": "https://github.com/jdublu416/MonarchRedo.git",
+  "author": "Jdublu",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql2": "^1.6.1",
+    "path": "^0.12.7",
+    "sequelize": "^4.39.0"
+  }
+}

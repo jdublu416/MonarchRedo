@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Authors = sequelize.define("authors", {
+  var Author = sequelize.define("author", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -47,5 +47,5 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
-  return Authors;
+  return Author;
 };

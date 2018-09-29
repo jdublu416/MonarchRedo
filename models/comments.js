@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Comments = sequelize.define("comments", {
+  var Comment = sequelize.define("comment", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -20,5 +20,5 @@ module.exports = function(sequelize, DataTypes) {
    
   });
 
-  return Comments;
+  return Comment;
 };

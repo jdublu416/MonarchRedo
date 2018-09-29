@@ -43,14 +43,6 @@ db.posts.hasMany(db.comments);
 db.authors.hasMany(db.comments);
 db.comments.belongsTo(db.authors);
 
-//setting foreign key in posts table post_id
-//db.authors.hasMany(db.posts, { foreignKey: 'post_id' });
-//posts.belongsTo(authors, { foreignKey: 'auth_id' });
-//setting foreign key in posts table from subject table
-//db.subject.hasMany(db.posts, {foreignKey: 'post_id'});
-//db.posts.belongsTo(db.subject, {foreignKey: 'subj_id'});
-//setting foreign key of post id in the comments table
-//db.posts.hasMany(db.comments, {foreignKey: 'comm_id'});
-//db.comments.belongsTo(db.posts, {foreignKey: 'post_id'});
+
 
 module.exports = db;

@@ -5,39 +5,39 @@ var app= express();
 
 module.exports = function(app) {
 
-  app.get('/authors', function(req, res) {
+  app.get('/author', function(req, res) {
 
-    db.authors.findAll({
+    db.author.findAll({
       include: [{all: true}],
 
     }).then(function(author) {
 
-      res.render("index", {authors: authors});
+      res.render("index", {author: author});
     });
   });
   
 //
-  app.get("/api/authors", function(req, res) {
+  app.get("/api/author", function(req, res) {
 
-    db.authors.findAll({}).then(function(dbauthors) {
-      return res.json(dbauthors);
+    db.author.findAll({}).then(function(dbauthor) {
+      return res.json(dbauthor);
     });
   });
 
-  app.delete("/api/authors/:id", function(req, res) {
-    db.authors.destroy({
+  app.delete("/api/author/:id", function(req, res) {
+    db.author.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(function(dbauthors) {
-        res.json(dbauthors);
+      .then(function(dbauthor) {
+        res.json(dbauthor);
       });
   });
 
 
-  app.post("/api/authors", function(req, res) {
-    dbauthors.create(
+  app.post("/api/author", function(req, res) {
+    dbauthor.create(
 
       {
         auth_FN: req.body.auth_FN,
@@ -46,50 +46,50 @@ module.exports = function(app) {
         auth_email: req.body.auth_email,
         auth_password: req.body.auth_password
       })
-      .then(function(dbauthors) {
-        res.json(dbauthors);
+      .then(function(dbauthor) {
+        res.json(dbauthor);
       });
   });
 
 
-app.get("/api/authors", function(req, res){
-  dbauthors.findAll({
+app.get("/api/author", function(req, res){
+  dbauthor.findAll({
     where: {
       subject: req.params.subject.id
     }
   })
 
-    .then(function(dbauthors) {
-      res.json(dbauthors);
+    .then(function(dbauthor) {
+      res.json(dbauthor);
     });
   });
 
-    app.delete("/api/authors/:id", function(req, res) {
+    app.delete("/api/author/:id", function(req, res) {
 
 
-      dbauthors.destroy({
+      dbauthor.destroy({
         where: {
           id: req.params.id
         }
       })
 
-        .then(function(dbauthors) {
-          res.json(dbauthors);
+        .then(function(dbauthor) {
+          res.json(dbauthor);
 
        
         });
     });
   
-    app.put("/api/authors", function(req, res) {
-      dbauthors.update(req.body,
+    app.put("/api/author", function(req, res) {
+      dbauthor.update(req.body,
         {
           where: {
             id: req.body.id
           }
         })
 
-        .then(function(dbauthors) {
-          res.json(dbauthors);
+        .then(function(dbauthor) {
+          res.json(dbauthor);
         });
     });
   
